@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملخصات تكنولوجيا المعلومات والاتصالات - الوحدات 11 و 12</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm 2cm 2cm 2cm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #000;
+            text-align: right;
+            direction: rtl;
+            font-size: 12pt;
+            background-color: white;
+            padding: 0;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm 15mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            page-break-after: always;
+            overflow-wrap: break-word;
+        }
+        
+        /* Page numbers */
+        .page-number {
+            position: absolute;
+            bottom: 15mm;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10pt;
+            color: #666;
+        }
+        
+        /* Headings */
+        h1 {
+            font-size: 20pt;
+            font-weight: bold;
+            text-align: center;
+            margin: 15mm 0 10mm 0;
+            color: #000;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5mm;
+        }
+        
+        h2 {
+            font-size: 16pt;
+            font-weight: bold;
+            margin: 8mm 0 5mm 0;
+            color: #2c3e50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 2mm;
+        }
+        
+        h3 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin: 6mm 0 3mm 0;
+            color: #34495e;
+        }
+        
+        h4 {
+            font-size: 13pt;
+            font-weight: bold;
+            margin: 5mm 0 3mm 0;
+            color: #000;
+        }
+        
+        /* Content sections */
+        .lesson-title {
+            font-size: 18pt;
+            font-weight: bold;
+            text-align: center;
+            margin: 8mm 0 5mm 0;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+            padding: 3mm;
+            border-radius: 5px;
+            border-right: 5px solid #3498db;
+        }
+        
+        .section {
+            margin-bottom: 5mm;
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin-right: 8mm;
+            margin-bottom: 3mm;
+        }
+        
+        li {
+            margin-bottom: 2mm;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 4mm 0;
+            font-size: 11pt;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            text-align: center;
+            padding: 2mm;
+            border: 1px solid #ddd;
+        }
+        
+        td {
+            padding: 2mm;
+            border: 1px solid #ddd;
+            text-align: right;
+        }
+        
+        /* Question formatting */
+        .question {
+            background-color: #f9f9f9;
+            padding: 3mm;
+            margin: 3mm 0;
+            border-right: 3px solid #3498db;
+            border-radius: 3px;
+        }
+        
+        .question-title {
+            font-weight: bold;
+            margin-bottom: 2mm;
+            color: #2c3e50;
+        }
+        
+        .answer {
+            background-color: #e8f4fc;
+            padding: 3mm;
+            margin: 2mm 0 4mm 0;
+            border-right: 3px solid #2ecc71;
+            border-radius: 3px;
+        }
+        
+        .answer-title {
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 1mm;
+        }
+        
+        /* Special sections */
+        .transition {
+            font-style: italic;
+            text-align: center;
+            margin: 8mm 0;
+            padding: 3mm;
+            background-color: #f8f9fa;
+            border-top: 1px dashed #ddd;
+            border-bottom: 1px dashed #ddd;
+            color: #7f8c8d;
+        }
+        
+        .highlight {
+            background-color: #fffacd;
+            padding: 1mm 2mm;
+            border-radius: 2px;
+        }
+        
+        .note {
+            background-color: #e8f4f8;
+            padding: 3mm;
+            margin: 2mm 0;
+            border-right: 3px solid #3498db;
+            border-radius: 3px;
+        }
+        
+        /* Page break for sections */
+        .page-break {
+            page-break-before: always;
+        }
+        
+        /* Colors for different content types */
+        .definition {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        
+        .example {
+            color: #16a085;
+        }
+        
+        .important {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        /* Print-specific styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 20mm 15mm;
+                width: 210mm;
+                min-height: 297mm;
+            }
+            
+            .page-number {
+                position: fixed;
+                bottom: 15mm;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        /* Utility classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-right {
+            text-align: right;
+        }
+        
+        .mb-1 {
+            margin-bottom: 1mm;
+        }
+        
+        .mb-2 {
+            margin-bottom: 2mm;
+        }
+        
+        .mb-3 {
+            margin-bottom: 3mm;
+        }
+        
+        .mb-4 {
+            margin-bottom: 4mm;
+        }
+        
+        .mb-5 {
+            margin-bottom: 5mm;
+        }
+        
+        .intro-box {
+            background-color: #f0f8ff;
+            padding: 4mm;
+            margin: 4mm 0;
+            border-right: 4px solid #2980b9;
+            border-radius: 4px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="page">
+        <div class="page-number">1</div>
+        <h1>أوراق عمل ومراجعة شاملة<br>لوحدتي المحاكاة والبرمجة</h1>
+        
+        <div class="intro-box">
+            <p>هذا المستند هو دليل دراسي شامل مصمم لطلاب الصف الأول الثانوي، ويغطي الوحدتين الحادية عشر والثانية عشر من منهج تكنولوجيا المعلومات والاتصالات. يهدف هذا الدليل إلى تبسيط المفاهيم الأساسية وتقديمها بأسلوب منهجي واضح، حيث يتم تناول كل درس من خلال ملخص مفصل يغطي جميع جوانبه، وأهم النقاط التي يجب التركيز عليها، بالإضافة إلى مجموعة متكاملة من الأسئلة بنمط امتحاني مع إجاباتها النموذجية لضمان تحقيق أقصى درجات الاستعداد والفهم.</p>
+        </div>
+        
+        <div class="lesson-title">الوحدة الحادية عشر: المحاكاة</div>
+        <div class="lesson-title">الدرس الأول: النمذجة</div>
+        
+        <div class="intro-box">
+            <p><span class="definition">مقدمة الدرس:</span> "النمذجة" هي أداة أساسية لفهم وتبسيط الظواهر المعقدة في العالم الحقيقي. من خلال إنشاء تمثيل مبسط لظاهرة ما، يمكننا تحليلها والتنبؤ بسلوكها قبل الدخول في مرحلة المحاكاة العملية، مما يوفر الوقت والجهد ويساعد في اتخاذ قرارات مدروسة.</p>
+        </div>
+        
+        <div class="section">
+            <h3>1. ملخص الدرس (مفصل)</h3>
+            <p>يقدم هذا الدرس المفاهيم الأساسية للنمذجة، وهي عملية ضرورية لفهم الأنظمة المعقدة والتنبؤ بسلوكها.</p>
+            
+            <h4>تعريفات أساسية:</h4>
+            <ul>
+                <li><span class="definition">النموذج (Model):</span> هو تمثيل مبسط لظاهرة أو حدث مستهدف. <span class="example">على سبيل المثال، الخريطة هي نموذج لمدينة حقيقية، حيث تُظهر فقط المعلومات الأساسية مثل الطرق والمباني.</span></li>
+                <li><span class="definition">النمذجة (Modeling):</span> هي عملية إنشاء النماذج التي تمثل الأحداث أو الظواهر المختلفة.</li>
+            </ul>
+            
+            <h4>تصنيف النماذج حسب الخصائص:</h4>
+            <p>يتم تصنيف النماذج بناءً على كيفية تفاعلها مع الزمن وطبيعة نتائجها:</p>
+            <ul>
+                <li><span class="definition">النموذج الثابت (Static Model):</span> هو نموذج لا يتغير بمرور الوقت. <span class="example">من أمثلته مخططات تصميم الغرف والعلاقة الرياضية بين نصف قطر الكرة وحجمها.</span></li>
+                <li><span class="definition">النموذج الديناميكي (Dynamic Model):</span> هو نموذج يتأثر بالتغيرات مع مرور الوقت، وينقسم إلى نوعين:
+                    <ul>
+                        <li><span class="definition">النموذج الحتمي (Deterministic Model):</span> نتائجه محددة ولا تتضمن سلوكًا عشوائيًا. له نتيجة واحدة فقط. <span class="example">من أمثلته حساب رصيد الحساب البنكي بناءً على فائدة ثابتة، أو العلاقة بين الزمن والمسافة لسيارة تسير بسرعة ثابتة.</span></li>
+                        <li><span class="definition">النموذج الاحتمالي (Probabilistic Model):</span> يتضمن سلوكًا غير منتظم أو عشوائي، وتكون نتائجه غير مؤكدة. <span class="example">من أمثلته نتائج رمي النرد، سحب اليانصيب، وتوقعات الطقس.</span></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h4>تصنيف النماذج حسب طريقة التعبير:</h4>
+            <p>يمكن التعبير عن النماذج بطرق مختلفة:</p>
+            <ul>
+                <li><span class="definition">النموذج المادي (Physical Model):</span> هو تمثيل فيزيائي ملموس لشيء ما.
+                    <ul>
+                        <li><span class="definition">مكبر:</span> مثل النموذج الجزيئي أو نموذج الحمض النووي (DNA).</li>
+                        <li><span class="definition">كامل الحجم:</span> مثل غرفة نموذجية أو دمية بالحجم الطبيعي.</li>
+                        <li><span class="definition">مصغر:</span> مثل الكرة الأرضية أو نموذج بلاستيكي.</li>
+                    </ul>
+                </li>
+                <li><span class="definition">النموذج التخطيطي (Diagrammatic Model):</span> هو تمثيل لشيء ما باستخدام رسم تخطيطي، مثل المخططات الانسيابية وخرائط الطرق.</li>
+                <li><span class="definition">النموذج الرياضي (Mathematical Model):</span> هو تمثيل لظاهرة باستخدام معادلات رياضية أو تعبيرات منطقية، مثل معادلة المسافة = السرعة × الزمن.</li>
+            </ul>
+            
+            <h4>خطوات عملية النمذجة:</h4>
+            <p>لإنشاء نموذج فعال، يجب اتباع الخطوات التالية:</p>
+            <ol>
+                <li><span class="definition">تحديد الغرض:</span> يجب تحديد الهدف من النمذجة بوضوح.</li>
+                <li><span class="definition">توضيح العناصر:</span> يجب تحديد المكونات الأساسية للنموذج والعلاقات التي تربط بينها.</li>
+                <li><span class="definition">تحديد طريقة التمثيل:</span> يجب اختيار طريقة التعبير المناسبة للنموذج (مادي، تخطيطي، رياضي).</li>
+            </ol>
+            
+            <p>فهم هذه المفاهيم هو الخطوة الأولى نحو بناء محاكاة فعالة قادرة على التنبؤ بسلوك الأنظمة الواقعية.</p>
+        </div>
+    </div>
+    
+    <!-- Page 2 -->
+    <div class="page">
+        <div class="page-number">2</div>
+        
+        <div class="section">
+            <h3>2. أهم النقاط (قائمة نقطية)</h3>
+            <ul>
+                <li><span class="definition">النموذج (Model):</span> تمثيل مبسط لظاهرة مستهدفة.</li>
+                <li><span class="definition">النمذجة (Modeling):</span> عملية إنشاء النماذج.</li>
+                <li><span class="definition">التصنيفات حسب الخصائص:</span>
+                    <ul>
+                        <li><span class="definition">ثابت (Static):</span> لا يتغير مع الزمن.</li>
+                        <li><span class="definition">ديناميكي (Dynamic):</span> يتغير مع الزمن، وينقسم إلى:
+                            <ul>
+                                <li><span class="definition">حتمي (Deterministic):</span> نتيجته واحدة ومحددة.</li>
+                                <li><span class="definition">احتمالي (Probabilistic):</span> نتيجته غير مؤكدة وتتضمن عشوائية.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><span class="definition">أنواع التعبير عن النماذج:</span>
+                    <ul>
+                        <li><span class="definition">مادي (Physical):</span> تمثيل فيزيائي (مكبر، كامل الحجم، مصغر).</li>
+                        <li><span class="definition">تخطيطي (Diagrammatic):</span> تمثيل باستخدام الرسوم التخطيطية.</li>
+                        <li><span class="definition">رياضي (Mathematical):</span> تمثيل باستخدام المعادلات الرياضية.</li>
+                    </ul>
+                </li>
+                <li><span class="definition">الخطوات الثلاث للنمذجة:</span> تحديد الغرض، توضيح العناصر، تحديد طريقة التمثيل.</li>
+            </ul>
+            
+            <div class="note">
+                <p><span class="important">ملاحظة:</span> هذه النقاط تمثل الأساس الذي ستحتاجه لفهم وحل جميع الأسئلة المتعلقة بدرس النمذجة.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>3. أسئلة شاملة (على نمط الاختبارات)</h3>
+            
+            <div class="question">
+                <div class="question-title">أ) الاختيار من متعدد:</div>
+                <ol>
+                    <li>أي من التالي يعتبر مثالاً على "نموذج احتمالي"؟
+                        <ul>
+                            <li>(أ) مخطط تصميم غرفة.</li>
+                            <li>(ب) العلاقة بين الزمن والمسافة لسيارة تسير بسرعة ثابتة.</li>
+                            <li>(ج) توقعات الطقس.</li>
+                            <li>(د) معادلة حساب مساحة الدائرة.</li>
+                        </ul>
+                    </li>
+                    <li>الكرة الأرضية التي تمثل كوكب الأرض تعتبر مثالاً على أي نوع من النماذج المادية؟
+                        <ul>
+                            <li>(أ) نموذج مكبر.</li>
+                            <li>(ب) نموذج كامل الحجم.</li>
+                            <li>(ج) نموذج مصغر.</li>
+                            <li>(د) نموذج رياضي.</li>
+                        </ul>
+                    </li>
+                    <li>معادلة الجهد = المقاومة × التيار هي مثال على أي نوع من النماذج؟
+                        <ul>
+                            <li>(أ) نموذج فيزيائي.</li>
+                            <li>(ب) نموذج تخطيطي.</li>
+                            <li>(ج) نموذج رياضي.</li>
+                            <li>(د) نموذج ثابت.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ب) الصواب والخطأ:</div>
+                <ol>
+                    <li>( ) النموذج الثابت هو نموذج يتأثر بالتغيرات بمرور الوقت.</li>
+                    <li>( ) النموذج الحتمي يتضمن سلوكًا غير منتظم وله أكثر من نتيجة محتملة.</li>
+                    <li>( ) المخطط الانسيابي هو مثال على نموذج تخطيطي.</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ج) ملء الفراغات:</div>
+                <ol>
+                    <li>عملية إنشاء نماذج للأحداث أو الظواهر تسمى __________.</li>
+                    <li>النموذج الذي لا يخضع للتغييرات بمرور الوقت يسمى نموذج __________.</li>
+                    <li>النموذج الذي يتم التعبير عنه باستخدام معادلات رياضية هو نموذج __________.</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">د) الإجابة القصيرة:</div>
+                <ol>
+                    <li>عرّف "النموذج (Model)" بكلماتك الخاصة.</li>
+                    <li>ما هي الخطوة الأولى في عملية النمذجة؟</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">هـ) أسئلة التفكير العليا:</div>
+                <ol>
+                    <li>إذا أردت تمثيل العلاقة بين سعر الفائدة ورصيد حسابك البنكي بمرور الوقت، أي نوع من النماذج (ثابت أم ديناميكي) ستستخدم؟ ولماذا؟</li>
+                    <li>إذا كان هدفك هو شرح تدفق العمليات في مصنع، أي طريقة تعبير (مادي، تخطيطي، أم رياضي) ستكون الأكثر فعالية؟ وضح إجابتك.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 3 -->
+    <div class="page">
+        <div class="page-number">3</div>
+        
+        <div class="section">
+            <h3>4. الإجابات النموذجية</h3>
+            
+            <div class="answer">
+                <div class="answer-title">أ) الاختيار من متعدد:</div>
+                <ol>
+                    <li>1. (ج) توقعات الطقس.</li>
+                    <li>2. (ج) نموذج مصغر.</li>
+                    <li>3. (ج) نموذج رياضي.</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ب) الصواب والخطأ:</div>
+                <ol>
+                    <li>1. ( خطأ )</li>
+                    <li>2. ( خطأ )</li>
+                    <li>3. ( صواب )</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ج) ملء الفراغات:</div>
+                <ol>
+                    <li>1. النمذجة (Modeling)</li>
+                    <li>2. ثابت (Static)</li>
+                    <li>3. رياضي (Mathematical)</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">د) الإجابة القصيرة:</div>
+                <ol>
+                    <li>هو تمثيل مبسط لظاهرة أو حدث معين يهدف إلى تسهيل فهمه وتحليله.</li>
+                    <li>الخطوة الأولى هي تحديد الغرض من النمذجة بوضوح.</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">هـ) أسئلة التفكير العليا:</div>
+                <ol>
+                    <li>سأستخدم نموذج ديناميكي. السبب هو أن رصيد الحساب البنكي يتغير بمرور الوقت نتيجة لتراكم الفوائد، مما يجعله ظاهرة تتأثر بالزمن.</li>
+                    <li>سيكون النموذج التخطيطي (مثل المخطط الانسيابي) هو الأكثر فعالية. السبب هو أن المخطط الانسيابي يمكنه توضيح تسلسل العمليات، نقاط اتخاذ القرار، والعلاقات بين الأقسام المختلفة بطريقة بصرية وسهلة الفهم، وهو ما يصعب تحقيقه بالنموذج المادي أو الرياضي لنفس الغرض.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="transition">
+            <p>بعد فهم كيفية إنشاء النماذج، حان الوقت لاستخدامها في بيئة عملية. ينتقل الدرس التالي إلى "المحاكاة"، وهي التطبيق الحيوي للنماذج التي تم بناؤها.</p>
+        </div>
+    </div>
+    
+    <!-- Page 4 -->
+    <div class="page page-break">
+        <div class="page-number">4</div>
+        
+        <div class="lesson-title">الدرس الثاني: المحاكاة [1]</div>
+        
+        <div class="intro-box">
+            <p><span class="definition">مقدمة الدرس:</span> تعتبر "المحاكاة" التطبيق العملي للنماذج التي درسناها سابقًا. من خلال المحاكاة، يمكننا التنبؤ بسلوك الأنظمة الواقعية المعقدة دون الحاجة إلى تجربتها فعليًا. تُعد برامج جداول البيانات أداة قوية وفعالة لتنفيذ عمليات المحاكاة، خاصة تلك التي تعتمد على نماذج حتمية، حيث تتيح لنا استخدام المعادلات والمراجع المختلفة لتتبع التغيرات بمرور الوقت.</p>
+        </div>
+        
+        <div class="section">
+            <h3>1. ملخص الدرس (مفصل)</h3>
+            <p>يركز هذا الدرس على مفهوم المحاكاة وكيفية تنفيذها باستخدام برامج جداول البيانات، مع التركيز على أدوات أساسية مثل المراجع النسبية والمطلقة.</p>
+            
+            <h4>طرق المراجع في جداول البيانات:</h4>
+            <p>تعتبر المراجع أساسية في بناء النماذج الديناميكية، حيث تحدد كيفية تحديث الصيغ عند نسخها إلى خلايا أخرى.</p>
+            <ul>
+                <li><span class="definition">المرجع النسبي (Relative Reference):</span> هي الطريقة الافتراضية، حيث يتغير موضع الخلية المشار إليها تلقائيًا عند نسخ الصيغة. <span class="example">فإذا كانت الصيغة في الخلية C1 تشير إلى A1، فعند نسخها إلى C2، ستشير تلقائيًا إلى A2.</span></li>
+                <li><span class="definition">المرجع المطلق (Absolute Reference):</span> هي طريقة تحافظ على موضع الصف أو العمود ثابتًا عند نسخ الصيغة. يتم تحقيق ذلك بإضافة الرمز $ قبل حرف العمود أو رقم الصف (مثال: $A$1). <span class="example">هذه الطريقة مفيدة للغاية عند التعامل مع قيم ثابتة مثل سعر الفائدة أو ضريبة المبيعات التي يجب تطبيقها على مجموعة من البيانات.</span></li>
+            </ul>
+            
+            <h4>مفهوم المحاكاة:</h4>
+            <ul>
+                <li><span class="definition">المحاكاة (Simulation):</span> هي عملية التلاعب بنموذج بهدف التنبؤ بسلوك الظواهر أو الأحداث الواقعية. تتيح لنا المحاكاة اختبار سيناريوهات مختلفة وفهم النتائج المحتملة دون تكاليف أو مخاطر التجارب الحقيقية.</li>
+            </ul>
+            
+            <h4>أمثلة على المحاكاة باستخدام جداول البيانات:</h4>
+            <ol>
+                <li><span class="definition">محاكاة حجم الماء:</span>
+                    <ul>
+                        <li><span class="definition">الهدف:</span> محاكاة العلاقة بين الوقت المنقضي ومقدار الماء المتجمع في وعاء فارغ.</li>
+                        <li><span class="definition">النموذج:</span> حتمي، يعتمد على معادلة رياضية بسيطة.</li>
+                        <li><span class="definition">المعادلة:</span> حجم الماء = معدل تدفق المياه × الوقت المنقضي.</li>
+                        <li><span class="definition">التطبيق:</span> يتم استخدام مرجع مطلق ($A$3) لمعدل تدفق المياه (لأنه قيمة ثابتة)، ومرجع نسبي (C3) للوقت المنقضي (لأنه يتغير مع كل صف).</li>
+                    </ul>
+                </li>
+                <li><span class="definition">محاكاة التوازن (طريقة الفائدة المركبة):</span>
+                    <ul>
+                        <li><span class="definition">الهدف:</span> محاكاة كيفية نمو رصيد حساب بنكي بمرور الوقت باستخدام الفائدة المركبة.</li>
+                        <li><span class="definition">طريقة الفائدة المركبة (Compound Interest):</span> هي طريقة يتم فيها إضافة الفائدة المكتسبة إلى المبلغ الأصلي، بحيث يتم حساب فائدة الفترة التالية على المبلغ الجديد (الأصلي + الفائدة).</li>
+                        <li><span class="definition">المعادلات:</span>
+                            <ul>
+                                <li>الفائدة = الرصيد الحالي × معدل الفائدة.</li>
+                                <li>رصيد الفترة القادمة = الرصيد الحالي + الفائدة.</li>
+                            </ul>
+                        </li>
+                        <li><span class="definition">التطبيق:</span> يُستخدم مرجع مطلق ($B$3) لمعدل الفائدة، بينما يُستخدم مرجع نسبي للرصيد الحالي الذي يتغير في كل فترة.</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <p>فهم كيفية استخدام المراجع المختلفة وتطبيق المعادلات هو جوهر تنفيذ محاكاة فعالة في برامج جداول البيانات.</p>
+        </div>
+    </div>
+    
+    <!-- Page 5 -->
+    <div class="page">
+        <div class="page-number">5</div>
+        
+        <div class="section">
+            <h3>2. أهم النقاط (قائمة نقطية)</h3>
+            <ul>
+                <li><span class="definition">المرجع النسبي:</span> يتغير تلقائيًا عند نسخ الصيغة.</li>
+                <li><span class="definition">المرجع المطلق:</span> يبقى ثابتًا عند نسخ الصيغة (باستخدام الرمز $).</li>
+                <li><span class="definition">المحاكاة:</span> عملية التلاعب بنموذج للتنبؤ بسلوك الظواهر الواقعية.</li>
+                <li><span class="definition">الفائدة المركبة:</span> إضافة الفائدة المكتسبة إلى المبلغ الأصلي لحساب الفائدة المستقبلية.</li>
+                <li><span class="definition">المعادلات الأساسية:</span>
+                    <ul>
+                        <li>لمحاكاة حجم الماء: حجم الماء = معدل التدفق × الزمن.</li>
+                        <li>لمحاكاة الرصيد: الفائدة = الرصيد الحالي × معدل الفائدة.</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="note">
+                <p><span class="important">ملاحظة:</span> هذه النقاط هي جوهر الدرس وتوضح الأدوات والمفاهيم الأساسية للمحاكاة في جداول البيانات.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>3. أسئلة شاملة (على نمط الاختبارات)</h3>
+            
+            <div class="question">
+                <div class="question-title">أ) الاختيار من متعدد:</div>
+                <ol>
+                    <li>ما الرمز الذي يستخدم لجعل مرجع الخلية مرجعًا مطلقًا في جداول البيانات؟
+                        <ul>
+                            <li>(أ) &</li>
+                            <li>(ب) *</li>
+                            <li>(ج) $</li>
+                            <li>(د) #</li>
+                        </ul>
+                    </li>
+                    <li>إذا تم نسخ الصيغة A1*B1 من الخلية C1 إلى الخلية C2، فماذا ستصبح الصيغة الجديدة؟
+                        <ul>
+                            <li>(أ) A1*B1</li>
+                            <li>(ب) A2*B2</li>
+                            <li>(ج) $A$1*$B$1</li>
+                            <li>(د) A1*B2</li>
+                        </ul>
+                    </li>
+                    <li>ما هو المصطلح الذي يصف عملية التلاعب بنموذج للتنبؤ بسلوك ظاهرة ما؟
+                        <ul>
+                            <li>(أ) النمذجة.</li>
+                            <li>(ب) المحاكاة.</li>
+                            <li>(ج) التحليل.</li>
+                            <li>(د) البرمجة.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ب) الصواب والخطأ:</div>
+                <ol>
+                    <li>( ) في طريقة الفائدة المركبة، يتم حساب الفائدة دائمًا على المبلغ الأصلي فقط.</li>
+                    <li>( ) المرجع النسبي يحافظ على موضع الخلية ثابتًا عند نسخ الصيغة.</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ج) ملء الفراغات:</div>
+                <ol>
+                    <li>الطريقة التي يتم فيها دمج الفائدة المكتسبة في المبلغ الأصلي لحساب الفائدة التالية تسمى __________.</li>
+                    <li>للحفاظ على مرجع خلية B2 ثابتًا عند نسخ الصيغة، يجب كتابته على الصورة __________.</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">د) أسئلة تطبيقية (مسائل قصيرة):</div>
+                <ol>
+                    <li>لديك رصيد أولي قدره 1000 جنيه في حساب بنكي بمعدل فائدة مركبة سنوي 10%. اكتب الصيغة التي ستستخدمها في جدول بيانات لحساب الفائدة للسنة الأولى، بافتراض أن الرصيد الأولي في الخلية A2 ومعدل الفائدة في الخلية B1. (تذكر استخدام المرجع المناسب لمعدل الفائدة).</li>
+                    <li>بناءً على السؤال السابق، احسب قيمة الرصيد الإجمالي في نهاية السنة الأولى.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 6 -->
+    <div class="page">
+        <div class="page-number">6</div>
+        
+        <div class="section">
+            <h3>4. الإجابات النموذجية</h3>
+            
+            <div class="answer">
+                <div class="answer-title">أ) الاختيار من متعدد:</div>
+                <ol>
+                    <li>1. (ج) $</li>
+                    <li>2. (ب) A2*B2</li>
+                    <li>3. (ب) المحاكاة.</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ب) الصواب والخطأ:</div>
+                <ol>
+                    <li>1. ( خطأ )</li>
+                    <li>2. ( خطأ )</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ج) ملء الفراغات:</div>
+                <ol>
+                    <li>1. الفائدة المركبة (Compound Interest)</li>
+                    <li>2. $B$2</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">د) أسئلة تطبيقية (مسائل قصيرة):</div>
+                <ol>
+                    <li>الصيغة لحساب الفائدة هي: =A2*$B$1. يجب استخدام مرجع مطلق لمعدل الفائدة لأنه قيمة ثابتة.</li>
+                    <li>الفائدة = 1000 × 10% = 100 جنيه. الرصيد الإجمالي في نهاية السنة الأولى = 1000 + 100 = 1100 جنيه.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="transition">
+            <p>انتقلنا من النماذج الحتمية ذات النتائج المحددة. الآن ننتقل إلى عالم النماذج الاحتمالية التي تتضمن عنصر المفاجأة والعشوائية، والتي تمثل العديد من الظواهر في الحياة الواقعية.</p>
+        </div>
+    </div>
+    
+    <!-- Page 7 -->
+    <div class="page page-break">
+        <div class="page-number">7</div>
+        
+        <div class="lesson-title">الدرس الثالث: المحاكاة [2]</div>
+        
+        <div class="intro-box">
+            <p><span class="definition">مقدمة الدرس:</span> يبني هذا الدرس على ما تعلمناه سابقًا، لكنه ينتقل من النماذج الحتمية إلى "النماذج الاحتمالية" التي تتضمن عنصر العشوائية. سنتعلم كيفية محاكاة هذه النماذج باستخدام أدوات قوية في برامج جداول البيانات مثل الأرقام العشوائية والدوال المنطقية. سنستكشف "طريقة مونت كارلو" كآلية أساسية لحل المشكلات التي تعتمد على الاحتمالات، مع تطبيقها في مثال عملي ومثير للاهتمام وهو حساب القيمة التقريبية للثابت الرياضي "باي (π)".</p>
+        </div>
+        
+        <div class="section">
+            <h3>1. ملخص الدرس (مفصل)</h3>
+            <p>يركز هذا الدرس على محاكاة النماذج الاحتمالية باستخدام وظائف متقدمة في جداول البيانات، وتحديدًا طريقة مونت كارلو.</p>
+            
+            <h4>الأرقام العشوائية ووظائف جداول البيانات:</h4>
+            <ul>
+                <li><span class="definition">الرقم العشوائي (Random Number):</span> هو رقم يمكن أن يظهر باحتمال متساوٍ ضمن نطاق محدد، وهو أساس محاكاة الظواهر التي تتضمن عدم اليقين.</li>
+                <li><span class="definition">الوظائف الأساسية:</span>
+                    <ul>
+                        <li><span class="definition">SUM(range):</span> تحسب مجموع القيم في نطاق محدد من الخلايا.</li>
+                        <li><span class="definition">RAND():</span> تولد رقمًا عشوائيًا يقع بين 0 و 1.</li>
+                        <li><span class="definition">IF(logical_expression, value_if_true, value_if_false):</span> دالة منطقية تقوم بإجراء اختبار. إذا كان logical_expression (الشرط) صحيحًا، فإنها تُرجع value_if_true. وإذا كان خاطئًا، فإنها تُرجع value_if_false.</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h4>طريقة مونت كارلو:</h4>
+            <ul>
+                <li><span class="definition">التعريف:</span> هي طريقة لحل المشكلات باستخدام الأرقام العشوائية في النماذج الاحتمالية. تعتمد على إجراء عدد كبير من التجارب العشوائية لتقدير نتيجة معينة.</li>
+            </ul>
+            
+            <h4>محاكاة حساب القيمة التقريبية لـ "باي (π)":</h4>
+            <p>تعتبر هذه المحاكاة تطبيقًا كلاسيكيًا لطريقة مونت كارلو.</p>
+            <ul>
+                <li><span class="definition">الفكرة الأساسية:</span> يتم رسم عدد كبير من النقاط العشوائية داخل مربع طول ضلعه 1. يوجد داخل هذا المربع ربع دائرة نصف قطرها 1.</li>
+                <li><span class="definition">العلاقة المنطقية:</span> نسبة النقاط التي تقع داخل ربع الدائرة إلى إجمالي عدد النقاط في المربع تساوي تقريبًا نسبة مساحة ربع الدائرة إلى مساحة المربع.
+                    <ul>
+                        <li>مساحة المربع = 1 × 1 = 1</li>
+                        <li>مساحة ربع الدائرة = (π × 1²) / 4 = π / 4</li>
+                        <li>إذًا: (عدد النقاط في ربع الدائرة / إجمالي عدد النقاط) ≈ π / 4</li>
+                    </ul>
+                </li>
+                <li><span class="definition">المعادلة النهائية:</span> π ≈ 4 × (عدد النقاط في ربع الدائرة / إجمالي عدد النقاط)</li>
+                <li><span class="definition">الخطوات في جدول البيانات:</span>
+                    <ol>
+                        <li><span class="definition">توليد النقاط:</span> نستخدم RAND() لتوليد إحداثيات (X, Y) عشوائية لكل نقطة.</li>
+                        <li><span class="definition">تحديد الموقع:</span> لكل نقطة، نتحقق مما إذا كانت تقع داخل ربع الدائرة باستخدام معادلة الدائرة (X² + Y² <= 1). نستخدم دالة IF لإعطاء قيمة 1 إذا كانت النقطة في الداخل وقيمة 0 إذا كانت في الخارج.</li>
+                        <li><span class="definition">الحساب:</span> نستخدم SUM لجمع كل قيم 1 (وهو ما يمثل عدد النقاط داخل الدائرة)، ثم نقسمه على إجمالي عدد النقاط، ونضرب الناتج في 4 للحصول على القيمة التقريبية لـ π.</li>
+                    </ol>
+                </li>
+                <li><span class="definition">الدقة:</span> كلما زاد عدد النقاط العشوائية المستخدمة في المحاكاة، زادت دقة القيمة التقريبية لـ π.</li>
+            </ul>
+            
+            <p>هذه المحاكاة توضح قوة استخدام الأرقام العشوائية في حل مشكلات معقدة بطريقة إحصائية.</p>
+        </div>
+    </div>
+    
+    <!-- Page 8 -->
+    <div class="page">
+        <div class="page-number">8</div>
+        
+        <div class="section">
+            <h3>2. أهم النقاط (قائمة نقطية)</h3>
+            <ul>
+                <li><span class="definition">الرقم العشوائي:</span> رقم يظهر باحتمال متساوٍ في نطاق معين.</li>
+                <li><span class="definition">وظائف أساسية:</span>
+                    <ul>
+                        <li><span class="definition">SUM:</span> لحساب المجموع.</li>
+                        <li><span class="definition">RAND:</span> لتوليد رقم عشوائي بين 0 و 1.</li>
+                        <li><span class="definition">IF:</span> لاتخاذ قرار بناءً على شرط.</li>
+                    </ul>
+                </li>
+                <li><span class="definition">طريقة مونت كارلو:</span> آلية لحل المشكلات باستخدام الأرقام العشوائية.</li>
+                <li><span class="definition">محاكاة قيمة "باي (π)":</span> تعتمد على نسبة النقاط العشوائية التي تقع داخل ربع دائرة مقارنة بإجمالي النقاط في مربع.</li>
+                <li><span class="definition">الدقة والمحاكاة:</span> كلما زاد عدد العينات العشوائية (النقاط)، كانت نتيجة المحاكاة أكثر دقة.</li>
+            </ul>
+            
+            <div class="note">
+                <p><span class="important">ملاحظة:</span> تمثل هذه النقاط حجر الزاوية لفهم محاكاة النماذج الاحتمالية.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>3. أسئلة شاملة (على نمط الاختبارات)</h3>
+            
+            <div class="question">
+                <div class="question-title">أ) الاختيار من متعدد:</div>
+                <ol>
+                    <li>أي دالة في جداول البيانات تُستخدم لتوليد رقم عشوائي بين 0 و 1؟
+                        <ul>
+                            <li>(أ) SUM()</li>
+                            <li>(ب) IF()</li>
+                            <li>(ج) RAND()</li>
+                            <li>(د) COUNT()</li>
+                        </ul>
+                    </li>
+                    <li>ما هي "طريقة مونت كارلو"؟
+                        <ul>
+                            <li>(أ) طريقة لحل المعادلات الرياضية الدقيقة.</li>
+                            <li>(ب) طريقة لحل المشكلات باستخدام الأرقام العشوائية والنماذج الاحتمالية.</li>
+                            <li>(ج) طريقة لإنشاء نماذج فيزيائية.</li>
+                            <li>(د) طريقة لحساب الفائدة المركبة.</li>
+                        </ul>
+                    </li>
+                    <li>في محاكاة حساب قيمة "باي"، إذا أردت زيادة دقة النتيجة، ماذا يجب أن تفعل؟
+                        <ul>
+                            <li>(أ) تقليل عدد النقاط العشوائية.</li>
+                            <li>(ب) زيادة عدد النقاط العشوائية.</li>
+                            <li>(ج) استخدام مربع أصغر.</li>
+                            <li>(د) استخدام دائرة كاملة بدلاً من ربع دائرة.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ب) الصواب والخطأ:</div>
+                <ol>
+                    <li>( ) دالة IF تُستخدم لحساب مجموع نطاق من الخلايا.</li>
+                    <li>( ) في محاكاة "باي"، كلما زاد عدد النقاط، اقتربت النتيجة من القيمة الحقيقية لـ π.</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ج) ملء الفراغات:</div>
+                <ol>
+                    <li>الصيغة المستخدمة للتحقق مما إذا كانت نقطة (إحداثياتها في B3 و C3) تقع داخل ربع دائرة نصف قطرها 1 هي IF(____<=1, 1, 0).</li>
+                    <li>تعتمد طريقة مونت كارلو على إجراء عدد كبير من التجارب __________ لتقدير نتيجة ما.</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">د) أسئلة تطبيقية (مسائل قصيرة):</div>
+                <ol>
+                    <li>في محاكاة لحساب قيمة "باي"، تم إنشاء 1000 نقطة عشوائية، ووجد أن 785 نقطة منها وقعت داخل ربع الدائرة. ما هي القيمة التقريبية لـ "باي" بناءً على هذه البيانات؟</li>
+                    <li>اكتب صيغة دالة IF التي تعرض كلمة "ناجح" إذا كانت القيمة في الخلية A1 أكبر من أو تساوي 50، وتعرض كلمة "راسب" إذا كانت أقل من 50.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 9 -->
+    <div class="page">
+        <div class="page-number">9</div>
+        
+        <div class="section">
+            <h3>4. الإجابات النموذجية</h3>
+            
+            <div class="answer">
+                <div class="answer-title">أ) الاختيار من متعدد:</div>
+                <ol>
+                    <li>1. (ج) RAND()</li>
+                    <li>2. (ب) طريقة لحل المشكلات باستخدام الأرقام العشوائية والنماذج الاحتمالية.</li>
+                    <li>3. (ب) زيادة عدد النقاط العشوائية.</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ب) الصواب والخطأ:</div>
+                <ol>
+                    <li>1. ( خطأ )</li>
+                    <li>2. ( صواب )</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ج) ملء الفراغات:</div>
+                <ol>
+                    <li>1. B3^2+C3^2</li>
+                    <li>2. العشوائية</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">د) أسئلة تطبيقية (مسائل قصيرة):</div>
+                <ol>
+                    <li>القيمة التقريبية لـ π ≈ 4 × (785 / 1000) = 4 × 0.785 = 3.14.</li>
+                    <li>الصيغة هي: =IF(A1>=50, "ناجح", "راسب").</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="transition">
+            <p>من عالم النماذج الرياضية المجردة إلى مواقف الحياة اليومية. درس "قوائم الانتظار" يوضح كيف يمكن تطبيق المحاكاة على مشكلات واقعية نراها في كل مكان.</p>
+        </div>
+    </div>
+    
+    <!-- Page 10 -->
+    <div class="page page-break">
+        <div class="page-number">10</div>
+        
+        <div class="lesson-title">الدرس الرابع: قوائم الانتظار (Queues)</div>
+        
+        <div class="intro-box">
+            <p><span class="definition">مقدمة الدرس:</span> تُعد "قوائم الانتظار" أو الطوابير نموذجًا شائعًا نواجهه في حياتنا اليومية، من الانتظار عند كاشير السوبر ماركت إلى انتظار تحميل صفحة ويب. هذا النموذج لا يقتصر على البشر، بل يمتد إلى أنظمة الكمبيوتر حيث تنتظر المهام دورها للمعالجة، مثل طابور الطباعة. فهم آليات عمل قوائم الانتظار يمكّننا من تحليل وتحسين كفاءة الخدمات والعمليات المختلفة.</p>
+        </div>
+        
+        <div class="section">
+            <h3>1. ملخص الدرس (مفصل)</h3>
+            <p>يقدم هذا الدرس تحليلاً لنموذج قوائم الانتظار (الطوابير)، وهو أحد النماذج الأساسية المستخدمة في المحاكاة لوصف كيفية تدفق الخدمات.</p>
+            
+            <h4>مفهوم قائمة الانتظار (Queue):</h4>
+            <ul>
+                <li><span class="definition">التعريف:</span> هي خط يتشكل عندما ينتظر العملاء (أو المهام) دورهم للحصول على خدمة ما.</li>
+                <li><span class="example">أمثلة واقعية:</span> طابور عند كاشير السوبر ماركت، طابور عند معلم جذب في مدينة ملاهي.</li>
+                <li><span class="example">أمثلة حاسوبية:</span> طابور مهام الطباعة، أو المهام التي تنتظر المعالجة في وحدة المعالجة المركزية (CPU).</li>
+            </ul>
+            
+            <h4>المكونات الأساسية لنموذج الطابور البسيط:</h4>
+            <p>لفهم ديناميكيات الطابور، يجب تحليل المتغيرات الزمنية التالية لكل عميل:</p>
+            <ul>
+                <li><span class="definition">وقت الوصول:</span> اللحظة التي يصل فيها العميل إلى نظام الخدمة.</li>
+                <li><span class="definition">وقت بدء الخدمة:</span> اللحظة التي تبدأ فيها خدمة العميل. ويعتمد تحديده على حالة النظام:
+                    <ul>
+                        <li>إذا لم يكن هناك طابور: وقت بدء الخدمة = وقت الوصول.</li>
+                        <li>إذا كان هناك عميل سابق: وقت بدء الخدمة = وقت انتهاء خدمة العميل السابق.</li>
+                    </ul>
+                </li>
+                <li><span class="definition">مدة الخدمة:</span> الفترة الزمنية التي يستغرقها تقديم الخدمة للعميل.</li>
+                <li><span class="definition">وقت انتهاء الخدمة:</span> اللحظة التي تنتهي فيها خدمة العميل.
+                    <ul>
+                        <li><span class="definition">المعادلة:</span> وقت انتهاء الخدمة = وقت بدء الخدمة + مدة الخدمة.</li>
+                    </ul>
+                </li>
+                <li><span class="definition">وقت الانتظار:</span> الفترة الزمنية التي يقضيها العميل في الطابور قبل بدء الخدمة.
+                    <ul>
+                        <li><span class="definition">المعادلة:</span> وقت الانتظار = وقت بدء الخدمة - وقت الوصول.</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <p>هذا النموذج البسيط يوفر إطارًا لتحليل كفاءة الخدمة، مثل متوسط وقت الانتظار أو أقصى طول للطابور، مما يساعد في تحسين الموارد وتوزيعها بشكل أفضل.</p>
+        </div>
+    </div>
+    
+    <!-- Page 11 -->
+    <div class="page">
+        <div class="page-number">11</div>
+        
+        <div class="section">
+            <h3>2. أهم النقاط (قائمة نقطية)</h3>
+            <ul>
+                <li><span class="definition">قائمة الانتظار (Queue):</span> خط من العملاء أو المهام ينتظرون الخدمة.</li>
+                <li><span class="definition">معادلة وقت انتهاء الخدمة:</span> وقت انتهاء الخدمة = وقت بدء الخدمة + مدة الخدمة.</li>
+                <li><span class="definition">معادلة وقت الانتظار:</span> وقت الانتظار = وقت بدء الخدمة - وقت الوصول.</li>
+                <li><span class="definition">شرط تحديد وقت بدء الخدمة:</span> يعتمد على ما إذا كان هناك عميل سابق قيد الخدمة. إذا كان النظام فارغًا، يبدأ فورًا؛ وإلا، ينتظر حتى ينتهي العميل السابق.</li>
+            </ul>
+            
+            <div class="note">
+                <p><span class="important">ملاحظة:</span> استيعاب هذه المعادلات والشرط الأساسي هو مفتاح تحليل أي سيناريو لقائمة الانتظار.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>3. أسئلة شاملة (على نمط الاختبارات)</h3>
+            
+            <div class="question">
+                <div class="question-title">أ) أسئلة تحليلية (معتمدة على الرسم البياني في صفحة 165 من المصدر):</div>
+                <p>بالاعتماد الدقيق على الرسم البياني الذي يوضح طابور الانتظار في المصدر، أجب عن الأسئلة التالية:</p>
+                <ol>
+                    <li>كم دقيقة انتظر العميل رقم 3 في الطابور قبل بدء خدمته؟</li>
+                    <li>ما هو إجمالي الوقت الذي قضاه العميل رقم 4 في النظام (من لحظة وصوله حتى انتهاء خدمته)؟</li>
+                    <li>متى وصل العميل رقم 2 إلى الطابور (بعد كم دقيقة من وصول العميل 1)؟</li>
+                    <li>ما هو أقصى عدد للعملاء الذين كانوا في الطابور في نفس الوقت؟</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ب) أسئلة حسابية قصيرة:</div>
+                <ol>
+                    <li>وصل عميل إلى كاشير فارغ في الدقيقة 5، وكانت مدة خدمته 3 دقائق. متى انتهت خدمته؟</li>
+                    <li>وصل عميل (العميل ب) في الدقيقة 10، وكان هناك عميل قبله (العميل أ) ستنتهي خدمته في الدقيقة 12. إذا كانت مدة خدمة العميل (ب) هي 5 دقائق، فكم دقيقة انتظر العميل (ب) في الطابور؟</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ج) أسئلة مفاهيمية:</div>
+                <ol>
+                    <li>اشرح بكلماتك كيف يتم تحديد وقت بدء الخدمة لعميل جديد يصل إلى نظام قد يكون به عملاء آخرون.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 12 -->
+    <div class="page">
+        <div class="page-number">12</div>
+        
+        <div class="section">
+            <h3>4. الإجابات النموذجية</h3>
+            
+            <div class="answer">
+                <div class="answer-title">أ) أسئلة تحليلية (معتمدة على الرسم البياني):</div>
+                <ol>
+                    <li>انتظر العميل رقم 3 لمدة 40 دقيقة (بدأت خدمته في الدقيقة 80 ووصل في الدقيقة 40).</li>
+                    <li>قضى العميل رقم 4 ما مجموعه 100 دقيقة في النظام (وصل في الدقيقة 60 وانتهت خدمته في الدقيقة 160).</li>
+                    <li>وصل العميل رقم 2 في الدقيقة 20 (بعد 20 دقيقة من وصول العميل 1).</li>
+                    <li>أقصى عدد للعملاء في الطابور كان 3 عملاء (العملاء 2، 3، و 4 كانوا ينتظرون معًا في الفترة من الدقيقة 60 إلى 80).</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ب) أسئلة حسابية قصيرة:</div>
+                <ol>
+                    <li>وقت بدء الخدمة = 5 دقائق (لأن الكاشير كان فارغًا). وقت انتهاء الخدمة = 5 + 3 = 8 دقائق.</li>
+                    <li>وقت بدء خدمة العميل (ب) = 12 دقيقة (لأنه يجب أن ينتظر انتهاء العميل أ). وقت الانتظار = وقت بدء الخدمة - وقت الوصول = 12 - 10 = 2 دقيقة.</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ج) أسئلة مفاهيمية:</div>
+                <ol>
+                    <li>يتم تحديد وقت بدء الخدمة بمقارنة وقت وصول العميل بوقت انتهاء خدمة العميل الذي يسبقه (إن وجد). إذا كان وقت وصول العميل الجديد بعد انتهاء خدمة العميل السابق (أو إذا كان النظام فارغًا)، فإن وقت بدء الخدمة هو وقت وصوله. أما إذا وصل قبل انتهاء خدمة العميل السابق، فإن وقت بدء خدمته سيكون هو نفس وقت انتهاء خدمة العميل السابق.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="transition">
+            <p>بعد فهم كيفية نمذجة ومحاكاة العمليات، ننتقل الآن إلى عالم أكثر ديناميكية وإبداعاً: عالم البرمجة. في الوحدة التالية، ستتعلم كيف تترجم الأفكار إلى تعليمات يفهمها الحاسوب وينفذها.</p>
+        </div>
+    </div>
+    
+    <!-- Page 13 -->
+    <div class="page page-break">
+        <div class="page-number">13</div>
+        
+        <div class="lesson-title">الوحدة الثانية عشر: البرمجة</div>
+        <div class="lesson-title">الدرس الأول: الخوارزميات</div>
+        
+        <div class="intro-box">
+            <p><span class="definition">مقدمة الدرس:</span> تُعتبر "الخوارزمية" حجر الأساس في عالم البرمجة وحل المشكلات. قبل كتابة أي سطر من الكود، يجب على المبرمج أن يفكر في الخطوات المنطقية والمتسلسلة التي ستحل المشكلة، وهذه المجموعة من الخطوات هي الخوارزمية. ولتسهيل فهم وتصميم هذه الخوارزميات، نستخدم أدوات مرئية مثل "المخططات الانسيابية" التي تمثل كل خطوة برمز معياري، مما يجعل تدفق العمليات واضحًا ومنظمًا.</p>
+        </div>
+        
+        <div class="section">
+            <h3>1. ملخص الدرس (مفصل)</h3>
+            <p>يقدم هذا الدرس المفاهيم التأسيسية للبرمجة، بدءًا من الخوارزميات وهياكل التحكم، وصولًا إلى لغات البرمجة نفسها.</p>
+            
+            <h4>مفهوم الخوارزميات:</h4>
+            <ul>
+                <li><span class="definition">الخوارزمية (Algorithm):</span> هي طريقة أو إجراء محدد لحل مشكلة معينة، وتتكون من مجموعة من الخطوات المنطقية والمتسلسلة.</li>
+                <li><span class="definition">أدوات التمثيل البصري:</span>
+                    <ul>
+                        <li><span class="definition">المخطط الانسيابي (Flowchart):</span> رسم تخطيطي يوضح تدفق عملية واحدة باستخدام رموز قياسية لتمثيل كل خطوة (بداية/نهاية، إدخال/إخراج، معالجة، شرط).</li>
+                        <li><span class="definition">مخطط النشاط (Activity Diagram):</span> رسم تخطيطي أكثر تعقيدًا، وهو مناسب لتمثيل تدفقات العمليات المتوازية والمتزامنة.</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h4>رموز المخططات الانسيابية الأساسية:</h4>
+            <table>
+                <tr>
+                    <th>الرمز (الشكل)</th>
+                    <th>الاسم</th>
+                    <th>المعنى</th>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">شكل بيضاوي</td>
+                    <td>طرفي (Terminal)</td>
+                    <td>يمثل نقطة البداية أو النهاية في العملية.</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">متوازي أضلاع</td>
+                    <td>بيانات (Data)</td>
+                    <td>يمثل عملية إدخال البيانات أو إخراجها.</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">مستطيل</td>
+                    <td>معالجة (Process)</td>
+                    <td>يمثل إجراء عملية حسابية أو معالجة للبيانات.</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">معين</td>
+                    <td>تفرع شرطي (Conditional branch)</td>
+                    <td>يمثل نقطة اتخاذ قرار بناءً على شرط معين.</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">شكل سداسي غير منتظم</td>
+                    <td>تكرار (Repeat)</td>
+                    <td>يمثل بداية أو نهاية حلقة تكرارية.</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">سهم</td>
+                    <td>خط التدفق (Line)</td>
+                    <td>يوضح اتجاه سير العمليات والتحكم.</td>
+                </tr>
+            </table>
+            
+            <h4>هياكل التحكم الأساسية:</h4>
+            <p>يمكن بناء أي خوارزمية باستخدام ثلاثة هياكل تحكم أساسية:</p>
+            <ol>
+                <li><span class="definition">الهيكل التسلسلي (Sequential Structure):</span> يتم تنفيذ العمليات بالترتيب، واحدة تلو الأخرى.</li>
+                <li><span class="definition">الهيكل التفرعي (Branching Structure):</span> يتم تنفيذ عمليات مختلفة بناءً على تحقق شرط معين (مثل جملة if-else).</li>
+                <li><span class="definition">الهيكل التكراري (Repeating Structure):</span> يتم تكرار مجموعة من العمليات طالما أن شرطًا معينًا لا يزال متحققًا (مثل حلقة while أو for).</li>
+            </ol>
+            
+            <h4>لغة البرمجة:</h4>
+            <ul>
+                <li><span class="definition">لغة البرمجة (Programming Language):</span> هي لغة تستخدم للتعبير عن الخوارزميات بطريقة يمكن للكمبيوتر فهمها.</li>
+                <li><span class="definition">لغة الآلة (Machine Language):</span> هي اللغة الأساسية التي يفهمها الكمبيوتر مباشرة، وتتكون من أصفار وآحاد. يتم ترجمة البرامج المكتوبة بلغات البرمجة إلى لغة الآلة ليتم تنفيذها.</li>
+            </ul>
+            
+            <h4>أمثلة على لغات البرمجة:</h4>
+            <ul>
+                <li><span class="definition">Python:</span> لغة شائعة في مجالات الذكاء الاصطناعي والإحصاء، وتتميز ببساطتها وقدرتها على التنفيذ بعدد قليل من أسطر الكود.</li>
+                <li><span class="definition">JavaScript:</span> لغة تعمل بشكل أساسي داخل متصفح الويب، مما يجعلها مثالية للتطبيقات المتعلقة بالويب.</li>
+                <li><span class="definition">Scratch:</span> لغة برمجة مرئية تعليمية، يتم فيها بناء البرامج عن طريق تجميع "كتل" رسومية، مما يجعلها سهلة الفهم للمبتدئين.</li>
+            </ul>
+            
+            <p>فهم هذه المكونات الأساسية يمهد الطريق لتعلم كيفية كتابة برامج فعالة لحل المشكلات.</p>
+        </div>
+    </div>
+    
+    <!-- Page 14 -->
+    <div class="page">
+        <div class="page-number">14</div>
+        
+        <div class="section">
+            <h3>2. أهم النقاط (قائمة نقطية)</h3>
+            <ul>
+                <li><span class="definition">الخوارزمية:</span> طريقة أو إجراء لحل مشكلة ما.</li>
+                <li><span class="definition">هياكل التحكم الثلاثة:</span> تسلسلي (بالترتيب)، تفرعي (بناءً على شرط)، تكراري (تكرار عملية).</li>
+                <li><span class="definition">لغة البرمجة:</span> لغة للتعبير عن الخوارزميات يفهمها الكمبيوتر بعد ترجمتها.</li>
+                <li><span class="definition">لغة الآلة:</span> اللغة الأساسية للكمبيوتر (أصفار وآحاد).</li>
+                <li><span class="definition">خصائص اللغات:</span>
+                    <ul>
+                        <li><span class="definition">Python:</span> بسيطة، قوية في الذكاء الاصطناعي.</li>
+                        <li><span class="definition">JavaScript:</span> متخصصة في تطبيقات الويب داخل المتصفح.</li>
+                        <li><span class="definition">Scratch:</span> مرئية وتعليمية، تعتمد على الكتل.</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="note">
+                <p><span class="important">ملاحظة:</span> هذه النقاط تلخص المفاهيم الأساسية التي يجب على كل مبرمج مبتدئ استيعابها.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>3. أسئلة شاملة (على نمط الاختبارات)</h3>
+            
+            <div class="question">
+                <div class="question-title">أ) التعرف على الرموز:</div>
+                <ol>
+                    <li>ما اسم ووظيفة الرمز الذي يأخذ شكل المعين في المخططات الانسيابية؟</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ب) الاختيار من متعدد:</div>
+                <ol>
+                    <li>لتنفيذ عملية طباعة جملة "مرحباً" 10 مرات، أي هيكل تحكم يجب استخدامه؟
+                        <ul>
+                            <li>(أ) الهيكل التسلسلي.</li>
+                            <li>(ب) الهيكل التفرعي.</li>
+                            <li>(ج) الهيكل التكراري.</li>
+                        </ul>
+                    </li>
+                    <li>أي من لغات البرمجة التالية تعمل بشكل أساسي داخل متصفح الويب؟
+                        <ul>
+                            <li>(أ) Python.</li>
+                            <li>(ب) JavaScript.</li>
+                            <li>(ج) Scratch.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ج) أسئلة المقارنة:</div>
+                <ol>
+                    <li>وضح الفرق الرئيسي بين لغة Python و Scratch بناءً على ما ورد في النص.</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">د) تحليل المخططات:</div>
+                <ol>
+                    <li>بالنظر إلى المخطط الانسيابي في "تحدى معلوماتك" (ص 169) الذي يوضح عملية عبور الشارع، صف بكلماتك ما الذي يقوم به هذا المخطط.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 15 -->
+    <div class="page">
+        <div class="page-number">15</div>
+        
+        <div class="section">
+            <h3>4. الإجابات النموذجية</h3>
+            
+            <div class="answer">
+                <div class="answer-title">أ) التعرف على الرموز:</div>
+                <ol>
+                    <li>الاسم: تفرع شرطي (Conditional branch). الوظيفة: يمثل نقطة اتخاذ قرار، حيث يتم اتباع مسار مختلف بناءً على ما إذا كان الشرط صحيحًا أم خاطئًا.</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ب) الاختيار من متعدد:</div>
+                <ol>
+                    <li>1. (ج) الهيكل التكراري.</li>
+                    <li>2. (ب) JavaScript.</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ج) أسئلة المقارنة:</div>
+                <ol>
+                    <li>الفرق الرئيسي هو أن Python لغة نصية تستخدم في مجالات متقدمة مثل الذكاء الاصطناعي، بينما Scratch هي لغة برمجة مرئية تعليمية تعتمد على تجميع الكتل البرمجية وهي مصممة لتكون سهلة الفهم.</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">د) تحليل المخططات:</div>
+                <ol>
+                    <li>المخطط يصف خوارزمية لعبور الشارع. يبدأ بالتحقق من حالة إشارة المرور. إذا لم تكن خضراء (شرط)، فإنه يتوقف (عملية). إذا كانت خضراء، فإنه يتابع العبور (عملية أخرى). هذا مثال على هيكل التحكم التفرعي.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="transition">
+            <p>بعد فهم النظرية والتخطيط، حان وقت التطبيق. في الدرس التالي، نبدأ بتعلم أدوات البرمجة الأساسية التي ستمكنك من ترجمة الخوارزميات إلى برامج فعلية.</p>
+        </div>
+    </div>
+    
+    <!-- Page 16 -->
+    <div class="page page-break">
+        <div class="page-number">16</div>
+        
+        <div class="lesson-title">الدرس الثاني: أساسيات البرمجة [1]</div>
+        
+        <div class="intro-box">
+            <p><span class="definition">مقدمة الدرس:</span> نبدأ في هذا الدرس التطبيق العملي لمفاهيم البرمجة التي تعلمناها نظريًا. سنركز على مفهومين أساسيين: أولاً، "المتغيرات"، وهي بمثابة حاويات لتخزين البيانات التي تتعامل معها برامجنا. ثانيًا، "البنية التسلسلية"، وهي أبسط أشكال تنفيذ الأوامر البرمجية، حيث يتم تنفيذ التعليمات واحدة تلو الأخرى بالترتيب الذي كتبت به.</p>
+        </div>
+        
+        <div class="section">
+            <h3>1. ملخص الدرس (مفصل)</h3>
+            <p>يقدم هذا الدرس مفهومين أساسيين في البرمجة من خلال المخططات الانسيابية: المتغيرات والبنية التسلسلية.</p>
+            
+            <ul>
+                <li><span class="definition">المتغيرات (Variables):</span> هي أماكن في ذاكرة الكمبيوتر تُستخدم لتخزين البيانات بشكل مؤقت أثناء تنفيذ البرنامج. يمكن تشبيه المتغير بصندوق يحمل اسمًا معينًا، ويمكن وضع قيمة بداخله (مثل رقم أو نص)، وتغيير هذه القيمة لاحقًا. المتغيرات ضرورية للتعامل مع البيانات المدخلة ونتائج العمليات الحسابية.</li>
+                <li><span class="definition">البنية التسلسلية (Sequential Structure):</span> هي أبسط هياكل التحكم، حيث يتم تنفيذ الأوامر البرمجية بالترتيب المحدد من الأعلى إلى الأسفل، واحدة تلو الأخرى دون أي قفزات أو تكرار. توضح المخططات الانسيابية لهذا الدرس هذا التدفق المباشر للعمليات.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>2. أهم النقاط (قائمة نقطية)</h3>
+            <ul>
+                <li><span class="definition">المتغيرات:</span> حاويات لتخزين البيانات في ذاكرة الكمبيوتر أثناء تشغيل البرنامج.</li>
+                <li><span class="definition">البنية التسلسلية:</span> تنفيذ الأوامر البرمجية بالترتيب، واحدًا تلو الآخر.</li>
+            </ul>
+            
+            <div class="note">
+                <p><span class="important">ملاحظة:</span> هذان المفهومان هما نقطة الانطلاق لأي برنامج.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>3. أسئلة شاملة (على نمط الاختبارات)</h3>
+            
+            <div class="question">
+                <div class="question-title">أ) الإجابة القصيرة:</div>
+                <ol>
+                    <li>ما هو "المتغير" في البرمجة؟</li>
+                    <li>ماذا نعني بـ "البنية التسلسلية"؟</li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ب) الصواب والخطأ:</div>
+                <ol>
+                    <li>( ) في البنية التسلسلية، يمكن للكمبيوتر تخطي بعض الأوامر والانتقال إلى أوامر أخرى بناءً على شرط معين.</li>
+                    <li>( ) تُستخدم المتغيرات لتخزين قيم يمكن أن تتغير أثناء تنفيذ البرنامج.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 17 -->
+    <div class="page">
+        <div class="page-number">17</div>
+        
+        <div class="section">
+            <h3>4. الإجابات النموذجية</h3>
+            
+            <div class="answer">
+                <div class="answer-title">أ) الإجابة القصيرة:</div>
+                <ol>
+                    <li>المتغير هو مساحة في الذاكرة لها اسم محدد تُستخدم لتخزين قيمة (بيانات) يمكن تغييرها أثناء تنفيذ البرنامج.</li>
+                    <li>البنية التسلسلية تعني أن الأوامر البرمجية تُنفذ بنفس الترتيب الذي كُتبت به، من الأعلى إلى الأسفل.</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ب) الصواب والخطأ:</div>
+                <ol>
+                    <li>1. ( خطأ )</li>
+                    <li>2. ( صواب )</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="transition">
+            <p>بعد إتقان الأساسيات، ننتقل إلى أدوات أكثر قوة تمنح برامجنا الذكاء والقدرة على التكيف. هياكل التحكم الشرطية والتكرارية هي التي تجعل البرامج مفيدة في الحياة الواقعية.</p>
+        </div>
+    </div>
+    
+    <!-- Page 18 -->
+    <div class="page page-break">
+        <div class="page-number">18</div>
+        
+        <div class="lesson-title">الدرس الثالث: أساسيات البرمجة [2]</div>
+        
+        <div class="intro-box">
+            <p><span class="definition">مقدمة الدرس:</span> يبني هذا الدرس على الأساسيات التي تعلمناها ويقدم هياكل التحكم الأكثر ديناميكية والتي تجعل البرامج ذكية ومتجاوبة. سنتعرف على "هيكل الحلقة" (التكرار) الذي يسمح لنا بتكرار تنفيذ مجموعة من الأوامر عدة مرات، و"هيكل التفرع" (الشرطي) الذي يمكننا من اتخاذ قرارات وتنفيذ مسارات مختلفة من الكود بناءً على شروط معينة. هذان المفهومان هما جوهر كتابة برامج قادرة على التعامل مع سيناريوهات معقدة.</p>
+        </div>
+        
+        <div class="section">
+            <h3>1. ملخص الدرس (مفصل)</h3>
+            <p>يستكمل هذا الدرس شرح هياكل التحكم الأساسية في البرمجة، حيث توضح المخططات الانسيابية مفهومي هيكل الحلقة وهيكل التفرع.</p>
+            
+            <ul>
+                <li><span class="definition">هيكل الحلقة (Loop Structure):</span> يُستخدم هذا الهيكل لتكرار تنفيذ جزء من الكود البرمجي عدة مرات. بدلاً من كتابة نفس الأمر مرارًا وتكرارًا، يمكن وضعه داخل حلقة ليتم تنفيذه عددًا محددًا من المرات أو حتى يتحقق شرط معين. هذا يجعل الكود أكثر كفاءة وأقصر.</li>
+                <li><span class="definition">هيكل التفرع (Branching Structure):</span> يُستخدم هذا الهيكل لجعل البرنامج يتخذ قرارات. بناءً على شرط معين (على سبيل المثال، هل قيمة المتغير أكبر من 10؟)، يمكن للبرنامج أن يختار تنفيذ مجموعة من الأوامر وتجاهل مجموعة أخرى. هذا يسمح للبرامج بالاستجابة للمدخلات المختلفة والتصرف بطرق مختلفة في مواقف متنوعة.</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3>2. أهم النقاط (قائمة نقطية)</h3>
+            <ul>
+                <li><span class="definition">هيكل الحلقة (Loop):</span> وظيفته هي تكرار تنفيذ الكود.</li>
+                <li><span class="definition">هيكل التفرع (Branching):</span> وظيفته هو تنفيذ كود مختلف بناءً على شرط معين.</li>
+            </ul>
+            
+            <div class="note">
+                <p><span class="important">ملاحظة:</span> هذان الهيكلان يمنحان البرامج القدرة على التكرار واتخاذ القرارات.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>3. أسئلة شاملة (على نمط الاختبارات)</h3>
+            
+            <div class="question">
+                <div class="question-title">أ) الاختيار من متعدد:</div>
+                <ol>
+                    <li>إذا كنت تريد أن يتحقق برنامجك مما إذا كان عمر المستخدم أكبر من 18 عامًا ثم يعرض رسالة مختلفة في كل حالة، فأي هيكل ستستخدم؟
+                        <ul>
+                            <li>(أ) هيكل الحلقة.</li>
+                            <li>(ب) هيكل التفرع.</li>
+                            <li>(ج) الهيكل التسلسلي.</li>
+                        </ul>
+                    </li>
+                    <li>لجعل البرنامج يحسب مجموع الأرقام من 1 إلى 100، أي هيكل هو الأنسب لهذه المهمة؟
+                        <ul>
+                            <li>(أ) هيكل الحلقة.</li>
+                            <li>(ب) هيكل التفرع.</li>
+                            <li>(ج) الهيكل التسلسلي.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="question">
+                <div class="question-title">ب) أسئلة المقارنة:</div>
+                <ol>
+                    <li>وضح بكلماتك الفرق بين الغرض من هيكل الحلقة والغرض من هيكل التفرع.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page 19 -->
+    <div class="page">
+        <div class="page-number">19</div>
+        
+        <div class="section">
+            <h3>4. الإجابات النموذجية</h3>
+            
+            <div class="answer">
+                <div class="answer-title">أ) الاختيار من متعدد:</div>
+                <ol>
+                    <li>1. (ب) هيكل التفرع.</li>
+                    <li>2. (أ) هيكل الحلقة.</li>
+                </ol>
+            </div>
+            
+            <div class="answer">
+                <div class="answer-title">ب) أسئلة المقارنة:</div>
+                <ol>
+                    <li>الغرض من هيكل الحلقة هو التكرار، أي إعادة تنفيذ نفس الكود عدة مرات. أما الغرض من هيكل التفرع فهو اتخاذ القرار، أي اختيار الكود الذي سيتم تنفيذه من بين عدة خيارات بناءً على شرط معين.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="transition">
+            <p>بهذا نكون قد وصلنا إلى نهاية وحدتي المحاكاة والبرمجة، اللتين غطتا كيفية نمذجة الواقع ومحاكاته، ثم كيفية ترجمة الأفكار إلى برامج عملية باستخدام أساسيات البرمجة. نتمنى لكم التوفيق في دراستكم.</p>
+        </div>
+    </div>
+
+    <!-- Print instructions -->
+    <div class="no-print" style="text-align: center; padding: 20px; background-color: #f8f9fa; border-top: 2px solid #3498db; margin-top: 20px;">
+        <h3>تعليمات الطباعة</h3>
+        <p>1. احفظ هذا الملف كـ HTML (ملف > حفظ باسم > اختر .html)</p>
+        <p>2. افتح الملف في متصفح الويب (Chrome, Firefox, Edge)</p>
+        <p>3. اضغط على Ctrl+P (أو Cmd+P على الماك) لفتح نافذة الطباعة</p>
+        <p>4. تأكد من اختيار "A4" كحجم الورق</p>
+        <p>5. اضبط الهوامش على "القياسية" أو "ضيق"</p>
+        <p>6. اضغط على "طباعة" للحصول على نسخة ورقية</p>
+        <button onclick="window.print()" style="background-color: #3498db; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; margin-top: 10px;">طباعة المستند الآن</button>
+    </div>
+
+    <script>
+        // Auto-add page numbers
+        document.addEventListener('DOMContentLoaded', function() {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach((page, index) => {
+                const pageNumber = page.querySelector('.page-number');
+                if (pageNumber) {
+                    pageNumber.textContent = (index + 1);
+                }
+            });
+        });
+        
+        // Print functionality
+        function printDocument() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
